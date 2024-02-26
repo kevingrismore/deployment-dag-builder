@@ -16,8 +16,6 @@ def task_dag_flow():
 
     dag.run()
 
-    print(dag_task_3.result.value)
-
 
 @task
 def print_something(input: str):
