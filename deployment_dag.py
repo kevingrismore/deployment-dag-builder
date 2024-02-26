@@ -1,5 +1,4 @@
 from prefect import flow, task, serve
-from prefect_dask import DaskTaskRunner
 
 from builder import DAGBuilder
 
@@ -16,7 +15,7 @@ def flow_2(name: str):
     return "result from deployment 2"
 
 
-@flow(log_prints=True, task_runner=DaskTaskRunner)
+@flow(log_prints=True)
 def deployment_dag_flow():
     dag = DAGBuilder()
 
